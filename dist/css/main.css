@@ -189,28 +189,28 @@
           animation: open-top 1s 3s linear forwards;
 }
 
-.loading-top {
-  color: white;
-  width: 100%;
-  position: absolute;
-  text-align: center;
-  font-size: 2rem;
-  bottom: -1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5rem;
-}
-
 .preloader-bottom {
   width: 100%;
   height: 50vh;
   background-color: #0D0D0D;
   z-index: 98;
   position: absolute;
-  top: 50%;
+  top: 50vh;
   left: 0;
   overflow: hidden;
   -webkit-animation: open-bottom 1s 3s linear forwards;
           animation: open-bottom 1s 3s linear forwards;
+}
+
+.loading-top {
+  color: white;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  font-size: 2.1vw;
+  bottom: -1.2vw;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
 }
 
 .loading-bottom {
@@ -218,8 +218,8 @@
   width: 100%;
   position: absolute;
   text-align: center;
-  font-size: 2rem;
-  top: -1.3rem;
+  font-size: 2.1vw;
+  top: -1.3vw;
   text-transform: uppercase;
   letter-spacing: 0.5rem;
 }
