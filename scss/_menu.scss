@@ -1,0 +1,115 @@
+@import "variables";
+  
+  .menu {
+    width: 75%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    perspective: 2000px;
+   
+    color: $custom-gold;
+    overflow:hidden;
+    transition: transform 1s ease-in ;
+    z-index: 1000;
+    top: 20px;
+  }
+  .beginningStateMenu{
+  transform: translateX(-100%);
+  }
+  .hideMenu {
+    
+  transform: translateX(-100%);
+  }
+  
+  .menuColumns {
+    width:33.3%;
+    height:90vh;
+    background-color: 	black;
+    transform-style: preserve-3d;
+    border-top: solid 3px $custom-gold;
+    border-bottom: solid 3px $custom-gold;
+    
+    
+  }
+  
+  .content {
+    position: absolute;
+   width: 2000px;
+    font-size: 5vw;
+    letter-spacing: .3rem;
+    font-family: arial;
+    text-transform: uppercase;
+    left:0;
+    top: 20vh;
+     backface-visibility: hidden; 
+    
+  }
+  .hide-third-column {
+   visibility: hidden;
+  } 
+  
+  .column-one {
+    border-left: solid 3px $custom-gold;
+    
+  }
+  .column-two {
+   transform-origin: left;
+   
+  }
+  .column-three {
+    transform-origin: left;
+    border-right: solid 3px $custom-gold; 
+  }
+  
+  /* ANIMATION ========================== */
+  
+  .animation-column-two {
+    animation: moving 1.2s ease-in forwards ;
+  }
+  
+  .animation-column-three {
+     animation: animation-column-three 2.4s ease-in forwards ;
+  }
+  
+  /* ANIMATION ========================== */
+  
+  
+  /* KEYFRAMES ========================== */
+  
+  @keyframes moving {  
+   to {
+      transform: rotateY(-180deg);
+    }
+  }
+  
+  @keyframes open {
+     to {
+      transform: rotateY(180deg);
+    }
+  
+  }
+  
+  @keyframes animation-column-three {
+    49.999%{
+      transform: rotateY(-180deg);
+    }
+    50% {
+      transform: translateX(-100%);
+      animation-mode:forwards; 
+      border-left: solid 3px $custom-gold;
+    }
+    
+    99.999% {
+      transform: translateX(-100%) rotateY(-180deg);
+    }
+    100% {
+      transform: translateX(-200%);
+      animation-mode:forwards; 
+  }
+    }
+  
+  
+  /* KEYFRAMES ================================== */
+  
+  
+  

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+crossorigin="anonymous">
+
+
+
+</head>
+<body>
+    <!-- PRELOADER -->
+<!-- <div class="preloader-top">
+    
+    <svg class="preloader-svg">
+        <line x1="0%" y1="100%" x2="100%" y2="100%" style="stroke:red; stroke-width:.5 " />
+    </svg>
+    <h2 class="loading-top"> |Loading|</h2>
+ </div>
+ <div class="preloader-bottom">
+    <h2 class="loading-bottom">|Loading|</h2>
+    <svg class="preloader-svg">
+        <line x1="100%" y1="0%" x2="0%" y2="0%" style="stroke:blue; stroke-width:.5 " />
+    </svg>
+ </div> -->
+ <!-- END PRELOADER -->
+
+ <!-- MENU-->
+ <div class="menu beginningStateMenu">  
+    <div class="menuColumns column-one">
+         <div class="content">
+              <h1>abo</h1>
+           <h1>pro</h1>
+           <h1>con</h1>
+        </div>
+    </div>
+    <div class="menuColumns column-two">
+         <div class="content">
+              <h1>ut m</h1>
+              <h1>jec</h1>
+           <h1>tac</h1>
+        </div>
+    </div>
+    <div class="menuColumns column-three ">
+      
+       <div class="content thirdContent">
+              <h1>e</h1>
+         <h1>ts</h1>
+          <h1>ts</h1>
+        </div>
+      </div>
+    </div>
+ <!-- END MENU-->
+
+    <svg class="background" >
+        <!-- HORIZZONTAL X TO X-->
+      <line x1="0%" y1="33%" x2="100%" y2="33%" style="stroke:white; stroke-width:.3" />
+         <line x1="0%" y1="66%" x2="100%" y2="66%"style="stroke:white; stroke-width:.3" />
+         <line x1="0%" y1="100%" x2="100%" y2="100%"style="stroke:white; stroke-width:.3" />
+      
+         <!-- VERTICAL Y TO Y-->
+      <line x1="25%" y1="10" x2="25%" y2="800" style="stroke:white; stroke-width:.3" />
+         <line x1="50%" y1="10" x2="50%" y2="800" style="stroke:white; stroke-width:.3" />
+         <line x1="75%" y1="10" x2="75%" y2="800" style="stroke:white; stroke-width:.3" />
+         <line x1="100%" y1="10" x2="100%" y2="800" style="stroke:white; stroke-width:.3" />
+        </svg>
+      
+      <main>
+     <section class="grid">
+        <div class="item">
+            <img class="logo" src="images/logo/logo_transparent.png" alt="logo">
+        </div>
+        <div class="item titleArea">
+            <h1 class="surname">Lena</h1>
+            <h1 class="name">Daniele</h1>
+            <h1 class="job">Developer</h1>
+        </div>
+
+            <!-- ANIMATION FOR BURGER MENU ======================================-->
+
+        <div class="item burgerContainer">
+            <svg viewBox="0 0 100 100">
+             <!-- FIRST -->
+            <path id="linea1Second" d="M10 30, L90 30" style="stroke:white; stroke-width:10"/>
+
+               <animate id="go1Second"xlink:href="#linea1Second" begin="indefinite"  attributeName="d" from="M10,30L90,30" to="M10,90L10,10" dur=".5s" fill="freeze"/>
+              <animate id="go1Triangle"xlink:href="#linea1Second" begin="indefinite" attributeName="d" from="M10,90L10,10" to="M10,51L90,12" dur=".3s" fill="freeze"/>
+                <!-- animation REVERSE-->
+              <animate id="back1Triangle"xlink:href="#linea1Second" begin="indefinite" attributeName="d" from="M10,51L90,12" to="M10,90L10,10" dur=".3s" fill="freeze"/>
+              <animate id="back1Second"xlink:href="#linea1Second" begin="indefinite" attributeName="d" from="M10,90L10,10" to="M10 30, L90 30 " dur=".5s" fill="freeze"/>
+              
+            <!-- SECOND -->
+                <path id="linea2Second" d="M10 50, L90 50" style="stroke:white; stroke-width:10"/>
+
+                <animate id="go2Second"xlink:href="#linea2Second" begin="indefinite" attributeName="d" from="M10,50L90,50" to="M50,90L50,10" dur=".5s" fill="freeze"/> 
+                <animate id="go2Triangle"xlink:href="#linea2Second" begin="indefinite"  attributeName="d" from="M50,90L50,10" to="M90,88L10,49" dur=".3s" fill="freeze"/> 
+                 <!-- animation REVERSE-->
+                <animate id="back2Triangle"xlink:href="#linea2Second" begin="indefinite"  attributeName="d" from="M90,88L10,49" to="M50,90L50,10" dur=".3s" fill="freeze"/> 
+                <animate id="back2Second"xlink:href="#linea2Second" begin="indefinite" attributeName="d" from="M50,90L50,10" to="M10,50L90,50" dur=".5s" fill="freeze"/> 
+
+                          
+            <!-- THIRD -->
+                <path id="linea3Second" d="M10 70, L90 70" style="stroke:white; stroke-width:10"/>
+              
+              <animate id="go3Second"xlink:href="#linea3Second"  begin="indefinite" attributeName="d" from="M10,70L90,70" to="M90,90L90,10" dur=".5s" fill="freeze"/>
+            <!-- animation REVERSE-->
+              <animate id="back3Second"xlink:href="#linea3Second" begin="indefinite" attributeName="d" from="M90,90L90,10" to="M10,70L90,70" dur=".5s" fill="freeze"/> 
+            </svg>
+    </div>
+ <!-- ANIMATION FOR BURGER MENU ======================================-->
+
+
+        <div class="item"></div>
+        <div class=" item hero">
+            <img src="images/hero1.gif" class="hide-hero" alt="hero">
+            <img src="images/hero2.gif" class="hide-hero" alt="hero">
+            <img src="images/hero3.gif" class="hide-hero" alt="hero">
+            <img src="images/hero4.gif" class="hide-hero" alt="hero">
+
+        </div>
+        <div class="item"></div> 
+        <div class="item scroll">Scroll 
+
+            <svg class="down-arrow">
+                <line x1="50%" y1="10" x2="50%" y2="100%" style="stroke:#c59d5f; stroke-width:.3" />
+            </svg>
+        </div>
+        <div class="item scroll">Scroll 
+
+            <svg class="down-arrow">
+                <line x1="50%" y1="10" x2="50%" y2="100%" style="stroke:#c59d5f; stroke-width:.3" />
+            </svg>        </div>
+     </section>
+
+ <!-- SECTION 2 , ABOUT ME =================================================== -->
+    <section class="section-two">
+
+        <div class="background-two">
+            <svg>
+                <line x1="1%" y1="0%" x2="1%" y2="100%" style="stroke:white; stroke-width:.3" />
+                <line x1="50%" y1="0%" x2="50%" y2="100%" style="stroke:white; stroke-width:.3" />
+                <line x1="99%" y1="0%" x2="100%" y2="99%" style="stroke:white; stroke-width:.3" />
+            </svg>
+        </div>
+        
+        <div class="title-two">
+            <h1>About<span> me</span></h1>
+        </div>
+        <div class="prova-img">
+            <img class="imgOfMe"src="images/mee.jpg" width="300">
+    </div>
+
+        
+    </section>
+
+ <!-- SECTION 2 , ABOUT ME =================================================== -->
+
+
+ <!-- SECTION 3 ,TKLFGKGFG =================================================== -->
+ <svg class="background" >
+    <!-- HORIZZONTAL X TO X-->
+  <line x1="0%" y1="33%" x2="100%" y2="33%" style="stroke:white; stroke-width:.3" />
+     <line x1="0%" y1="66%" x2="100%" y2="66%"style="stroke:white; stroke-width:.3" />
+     <line x1="0%" y1="100%" x2="100%" y2="100%"style="stroke:white; stroke-width:.3" />
+  
+     <!-- VERTICAL Y TO Y-->
+  <line x1="25%" y1="10" x2="25%" y2="800" style="stroke:white; stroke-width:.3" />
+     <line x1="50%" y1="10" x2="50%" y2="800" style="stroke:white; stroke-width:.3" />
+     <line x1="75%" y1="10" x2="75%" y2="800" style="stroke:white; stroke-width:.3" />
+     <line x1="100%" y1="10" x2="100%" y2="800" style="stroke:white; stroke-width:.3" />
+    </svg>
+ <section class="section-three grid">
+
+ </section>
+
+
+    </main>
+    <script src="app.js"></script>
+    <script src="burgerMenu.js"></script>
+
+</body>
+</html>
