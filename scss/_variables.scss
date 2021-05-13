@@ -1,3 +1,20 @@
 
 $custom-black: #0D0D0D;
 $custom-gold: #c59d5f;
+$custom-white: #FFFCF4;
+$sofia-font: "sofia";
+
+
+.title {
+      h1 {
+    font-family: "monument-regular";
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+
+    span {
+      color: transparent;
+      -webkit-text-stroke: 1px white;
+    }
+}
+}

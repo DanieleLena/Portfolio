@@ -1,319 +1,394 @@
 @import "variables";
 @import "menu";
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
 }
 @font-face {
-    font-family: "monument-regular";
-    src: url("/monumentextended-freeforpersonaluse/MonumentExtended-FreeForPersonalUse/MonumentExtended-Regular.otf");
-    }
-@font-face {
-    font-family: "monument-bold";
-    src: url("/monumentextended-freeforpersonaluse/MonumentExtended-FreeForPersonalUse/MonumentExtended-Ultrabold.otf");
+  font-family: "monument-regular";
+  src: url("/monumentextended-freeforpersonaluse/MonumentExtended-FreeForPersonalUse/MonumentExtended-Regular.otf");
 }
 @font-face {
-    font-family: "sofia";
-    src: url("/Sofia/Sofia\ Pro\ Regular\ Italic\ Az.otf");
+  font-family: "monument-bold";
+  src: url("/monumentextended-freeforpersonaluse/MonumentExtended-FreeForPersonalUse/MonumentExtended-Ultrabold.otf");
+}
+@font-face {
+  font-family: "sofia";
+  src: url("/Sofia/Sofia\ Pro\ Regular\ Az.otf");
 }
 
 // #c59d5f;
 
 body {
-    
-  }
+  // overflow-y:hidden; // change with JS after the preloader
+  background-color:black;
+}
 // PRELOADER ========================================================================
 
-  .preloader-top{
-      width: 100%;
-      height: 50vh;
-      background-color: #0D0D0D;
-      z-index: 99;
-      position: absolute;
-      top: 0;
-      left: 0;
-      overflow: hidden;
+.preloader-top {
+  width: 100%;
+  height: 50vh;
+  background-color: #0d0d0d;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 
-      animation: open-top 1s 3s linear forwards;
-  }
-  .preloader-bottom{
-    width: 100%;
-    height: 50vh;
-    background-color:#0D0D0D;
-    z-index: 98;
-    position: absolute;
-    top: 50vh;
-    left: 0;
-    overflow: hidden;
-
-    animation: open-bottom 1s 3s linear forwards;
-   
+  animation: open-top 1s 3s linear forwards;
 }
-.loading-top{
-    color: white;
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    font-size: 2.1vw;
-    bottom: -1.2vw;
-    text-transform: uppercase;
-    letter-spacing: 0.5rem;
+.preloader-bottom {
+  width: 100%;
+  height: 50vh;
+  background-color: #0d0d0d;
+  z-index: 98;
+  position: absolute;
+  top: 50vh;
+  left: 0;
+  overflow: hidden;
 
-  }
+  animation: open-bottom 1s 3s linear forwards;
+}
+.loading-top {
+  color: white;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  font-size: 2.1vw;
+  bottom: -1.2vw;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
 .loading-bottom {
-    color: white;
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    font-size: 2.1vw;
-    top: -1.3vw;
-    text-transform: uppercase;
-    letter-spacing: 0.5rem;
+  color: white;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  font-size: 2.1vw;
+  top: -1.3vw;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
 }
 .preloader-svg {
-    width: 100%;
-    height: 50vh;
-    stroke-dasharray: 2000;
-    stroke-dashoffset: 2000;
-    animation: dash 2.9s  ease-in forwards;
+  width: 100%;
+  height: 50vh;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: dash 2.9s ease-in forwards;
 }
 @keyframes open-top {
-    to {
-        top:-50vh;
-    }
+  to {
+    top: -50vh;
+  }
 }
 
 @keyframes open-bottom {
-    to {
-        top: 100%;
-        z-index: -10;
-    }
+  to {
+    top: 100%;
+    z-index: -10;
+  }
 }
 
-
 // BACKGROUDN GRID ========================================================================
- 
-  .background {
-    position: absolute;
-    width: 100%;
-    height:100vh;
-    background: #0D0D0D;
-    stroke-dasharray: 2000;
-     stroke-dashoffset: 2000;
-    z-index: 1;
-     
-    animation: dash 2.5s  ease-in forwards;
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #0d0d0d;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  z-index: 1;
+
+  animation: dash 2.5s 4s ease-in forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
   }
-  
-  @keyframes dash {
-    to {
-      stroke-dashoffset: 0;
-    }  
+}
+// BACKGROUDN GRID ========================================================================
+
+.grid {
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  display: grid;
+
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 33.3% 33.3% 33.3%;
+  grid-template-areas:
+    "logo title title right1"
+    "left content content righ2"
+    "left2 content content right3";
+}
+.item {
+  max-width: 100%;
+  max-height: 100%;
+  color: $custom-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  .logo {
+    max-width: 100%;
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
-  // BACKGROUDN GRID ========================================================================
+}
+.titleArea {
+  grid-area: title;
+  flex-direction: column;
+  background-color: $custom-black;
+  max-height: 99%;
 
-  
-  .grid {
-    width:100%;
-    height: 100vh;
-    z-index: 2;
-     display:grid;
-
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 33.3% 33.3% 33.3%;
-    grid-template-areas:
-  "logo title title right1"
-  "left content content righ2"
-  "left2 content content right3";
- 
+  h1 {
+    font-family: "monument-regular";
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    transition: transform 0.5s linear;
   }
-  .item {
-      max-width: 100%;
-      max-height: 100%;
-    color: lavenderblush;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
+  .surname {
+    line-height: 5px;
+    color: transparent;
+    -webkit-text-stroke: 1px$custom-white;
 
-    .logo {
-        max-width: 100%;
-        width: 100px;
-        cursor: pointer;
-        transition: transform .2s ease-out;
-
-        &:hover {
-            transform: scale(1.2);
-        }
-
+    &:hover {
+      transform: scale(1.01);
     }
-    
-
-
   }
-  .titleArea {
-    grid-area: title;
-    flex-direction: column;
-    background-color: $custom-black;
-    max-height: 99%;
-
-    h1 {
-        font-family: "monument-regular";
-        font-size: 60px;
-        text-transform: uppercase;
-        letter-spacing: 0.2rem;
-        transition: transform .5s linear;
+  .name {
+    font-family: "monument-bold";
+    color: $custom-white;
+    -webkit-text-stroke: 1px black;
+    &:hover {
+      transform: scale(1.01);
     }
-    .surname {
-        line-height: 5px;
-        color: transparent;
-        -webkit-text-stroke: 1px white;
-        
-        &:hover {
-            transform: scale(1.01);
-        }
+  }
+  .job {
+    line-height: 5px;
+    color: transparent;
+    -webkit-text-stroke: 1px $custom-white;
+    &:hover {
+      transform: scale(1.01);
     }
-    .name {
-        font-family: "monument-bold";
-        color: #FFFFFF;
-        -webkit-text-stroke: 1px black;
-        &:hover {
-            transform: scale(1.01);
-        }
-    }
-    .job {
-        line-height: 5px;
-        color: transparent;
-        -webkit-text-stroke: 1px white;
-        &:hover {
-            transform: scale(1.01);
-        }
-    }
+  }
 }
 
 .burgerContainer {
-    width: 45px;
-    height: 50px;
-    margin: auto;
-    cursor: pointer;
+  width: 45px;
+  height: 50px;
+  margin: auto;
+  cursor: pointer;
 
-    transition: transform .2s ease-out;
-    
-    &:hover {
-        transform: scale(1.2);
-    }
+  transition: transform 0.2s ease-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
+.hero {
+  grid-area: content;
+  z-index: 3;
+  img {
+    transition: transform 0.5s linear;
 
-
-
-  .hero{
-    grid-area: content;
-    z-index: 3;
-    img {
-        transition: transform .5s linear;
-
-        max-width: 100%;
-        max-height: 100%;
-        &:hover {
-            transform: scale(1.05);
-        }
+    max-width: 100%;
+    max-height: 100%;
+    &:hover {
+      transform: scale(1.05);
     }
+  }
 }
 
 .hide-hero {
-    display: none;
+  display: none;
 }
 
 .scroll {
-    flex-direction: column;
-    color: #c59d5f;
-    font-family: "sofia";
-    text-transform: uppercase;
-    .down-arrow {
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        animation: dash 2.5s infinite ease-in alternate ;
-
-    }
+  flex-direction: column;
+  color: #c59d5f;
+  font-family: "sofia";
+  text-transform: uppercase;
+  .down-arrow {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 2.5s infinite ease-in alternate;
+  }
 }
 
-  
-  .section-two {
-      width: 100%;
-      height: 100vh;
-      position: relative;
-      background-color: black;
+.section-two {
+  width: 100%;
+//   height: 100vh;
+//   position: relative;
+  background-color: black;
+}
 
-      
+.background-two {
+  width: 51%;
+  height: 120vh;
+  background-color: #0d0d0d;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  svg {
+    width: 100%;
+    height: 120vh;
   }
+}
+.content-section-two {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+   padding: 0 2rem;   
+}
 
-  .background-two {
-      width: 51%;
-      height: 100vh;
-      background-color: #0D0D0D;
-      margin: auto;
-      z-index: 1;
-    svg {
-        width: 100%;
-        height: 100vh;
-    }
+.title-two {
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    color: $custom-white;
+    background-color: $custom-black;
+    padding: 2rem 0;
+    z-index: 99;
+}
+.title-three {
+    text-align: center;
+    color: $custom-white;
+    background-color: $custom-black;
+    padding: 2rem 0;
+    z-index: 99;
+    line-height: 2.5rem;
+}
 
-  }
 
-  .title-two {
-      width: auto;
-      max-width: 50%;
-      height: 33.3%;
-      position: absolute;
-      margin: auto;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      
-      
-      background-color: $custom-black;
-      
-      text-align: center;
-      color: whitesmoke;
-      
 
-      h1{
-        font-family: "monument-regular";
-        font-size: 60px;
-        text-transform: uppercase;
-        letter-spacing: 0.2rem;
+// PROVA =============================================================
 
-        span {
-            color: transparent;
-        -webkit-text-stroke: 1px white;
-        }
-
-      }
-  }
-  .prova-img {
-      position: absolute;
-      top: 220px;
-      left: 53%;
-
-      img {
-        transition: filter .5s linear;
-        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(88%);
-       
-
-        &:hover {
-            filter: grayscale(40%);
-        }
-      }
-  }
-  
-
-  // PROVA =============================================================
-
+.section-three {
+  width: 95%;
+  margin: auto;
+  //   height: 100vh;
  
+  
+}
+
+.project-row {
+  width: 100%;
+  margin: auto;
+  height: 60vh;
+  //   border: 3px solid white;
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.322);
+}
+
+.project-left {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  border-right: 1px solid rgba(255, 255, 255, 0.322);
+  background-color: $custom-black
+}
+.project-right {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  background-color: $custom-black;
+}
+
+.project-img,
+video {
+    padding: 2rem;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  cursor: pointer;
+}
+.project-mockup {
+  width: 30%;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+}
+.mockup-left {
+  left: -1rem;
+}
+.mockup-right {
+  left: 73%;
+}
+
+.project-text-container {
+  // height: 85%;
+  color: #FFFCF4;
+  padding: 2rem;
+  font-family: $sofia-font;
+  text-align: justify;
+
+  h3 {
+    font-size: 2rem;
+    color: $custom-gold;
+    margin-bottom: 1rem;
+  }
+  p {
+    //   font-weight: 400;
+  }
+}
+.project-btn-container {
+  padding: 0 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.project-btn {
+  font-size: 1rem;
+  padding: 0.5rem 0.9rem;
+  margin: 1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: white;
+  color: #0d0d0d;
+  font-family: $sofia-font;
+
+  i {
+    margin-left: 0.4rem;
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    transform: scale(0.95);
+  }
+}
+
+.live-btn {
+  background-color: $custom-gold;
+
+  &:hover {
+    background-color: white;
+    border: 1px solid $custom-gold;
+    color: $custom-gold;
+  }
+}
+.code-btn {
+  &:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+  }
+}
