@@ -4,7 +4,9 @@ $custom-gold: #c59d5f;
 $custom-white: #FFFCF4;
 $sofia-font: "sofia";
 
-
+section {
+  overflow: hidden;
+}
 .title {
       h1 {
     font-family: "monument-regular";
