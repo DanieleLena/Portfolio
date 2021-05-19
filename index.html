@@ -30,31 +30,7 @@
  </div> -->
     <!-- END PRELOADER -->
 
-    <!-- MENU-->
-    <div class="menu beginningStateMenu">
-      <div class="menuColumns column-one">
-        <div class="content">
-          <h1>abo</h1>
-          <h1>pro</h1>
-          <h1>con</h1>
-        </div>
-      </div>
-      <div class="menuColumns column-two">
-        <div class="content">
-          <h1>ut m</h1>
-          <h1>jec</h1>
-          <h1>tac</h1>
-        </div>
-      </div>
-      <div class="menuColumns column-three">
-        <div class="content thirdContent">
-          <h1>e</h1>
-          <h1>ts</h1>
-          <h1>ts</h1>
-        </div>
-      </div>
-    </div>
-    <!-- END MENU-->
+   
 
     <svg class="background">
       <!-- HORIZZONTAL X TO X-->
@@ -125,7 +101,7 @@
         <!-- ANIMATION FOR BURGER MENU ======================================-->
 
         <div class="item burgerContainer">
-          <svg viewBox="0 0 100 100">
+          <svg   viewBox="0 0 100 100">
             <!-- FIRST -->
             <path
               id="linea1Second"
@@ -257,9 +233,16 @@
         <!-- ANIMATION FOR BURGER MENU ======================================-->
 
         <div class="item"></div>
-        <div class="item hero">
-          <!-- Gif img with JS-->
-        </div>
+        <!-- <div class="item hero">
+          Gif img with JS
+        </div> -->
+
+        <div class="scene "></div>
+        <div class="item menu hide-menu" id="about-menu">
+          <a  class="link-menu"href="#about">
+          About
+        </a></div>
+        
         <div class="item"></div>
         <div class="item scroll">
           Scroll
@@ -274,6 +257,17 @@
             />
           </svg>
         </div>
+                <div class="item menu hide-menu" id="project-menu">
+                   <a  class="link-menu"href="#project">
+          Projects
+        </a>
+                </div>
+        <div class="item menu hide-menu" id="contact-menu">
+           <a  class="link-menu"href="#contacts">
+          Contacts
+        </a>
+        </div>
+
         <div class="item scroll">
           Scroll
 
@@ -290,13 +284,13 @@
       </section>
 
       <!-- SECTION 2 , ABOUT ME =================================================== -->
-      <section class="section-two">
+      <section class="section-two" id="about">
         <div class="background-two">
           <svg>
             <line
               x1="1%"
               y1="0%"
-              x2="1%"
+              x2="0%"
               y2="100%"
               style="stroke: white; stroke-width: 0.3"
             />
@@ -320,42 +314,43 @@
             <div class="title-two title">
               <h1>About<span> me</span></h1>
             </div>
-            <!-- <div class="prova-img">
-          <img class="imgOfMe" src="images/mee.jpg" width="300" />
-        </div> -->
 
-            <div class="title-three title">
-              <h1><span> Latest</span> Projects</h1>
-            </div>
+        <div class="about-me-text">
+          <br>
+          <br>
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime recusandae tempora eligendi dicta architecto ab nesciunt repellat quidem eius sequi! Nobis voluptatum deserunt culpa neque reprehenderit explicabo quae voluptate rem commodi molestiae esse nam, ex quam blanditiis numquam porro modi officiis impedit fuga! Dolor, mollitia? Vero dolorem omnis ea quae consectetur, aperiam perferendis eum facere porro aliquam dolor quas quis maiores impedit repellendus vel. Earum ad ut cum voluptate fugiat similique harum eaque. Beatae perspiciatis consectetur error dolore quis laborum, voluptatibus quaerat iure voluptates enim, est repudiandae ipsam dolorem ut molestiae a, quam nisi. Sapiente iusto nisi fuga corporis cumque.</p>
+
+        </div>
+           
           </div>
         </div>
       </section>
 
       <!-- SECTION 3 ,TKLFGKGFG =================================================== -->
 
-      <section class="section-three">
+      <section class="section-three"  id="project">
+         <div class="title-three title">
+              <h1><span> Latest <br></span> Projects</h1>
+            </div>
         <!-- PROJECT 1-->
         <article class="project-row">
           <div class="project-left">
-            <!-- <img
+            <a href="https://enjoi-juice.vercel.app/" target="_blank">
+            <img
               src="./images/projects-images/Enjoi Juice cover.png"
               class="project-img"
               alt="Enjoi Juice project"
-            /> -->
-            <video
-              class="video"
-              width="100%"
-              poster="./images/projects-images/Enjoi Juice cover.png"
-              muted
-            >
-              <source src="video-enjoi-juice.webm" type="video/mp4" />
-            </video>
+            />
+           
+           
             <img
               src="./images/projects-images/enjoi-juice-mockup.png"
               class="project-mockup mockup-left"
               alt="mockup"
-            />
-          </div>
+            /> </a>
+            </div>
+         
           <div class="project-right">
             <div class="project-text-container">
               <h3>01.Enjoi Juice 3D</h3>
@@ -413,12 +408,15 @@
               </div>
            
             <div class="project-btn-container">
-              <a href="#" class="project-btn live-btn">
+              
+              <a href="https://enjoi-juice.vercel.app/" target="_blank" class="project-btn live-btn">
                 Check Live <i class="fas fa-eye"></i>
               </a>
-              <a href="#" class="project-btn code-btn">
+             
+              <a href="https://github.com/DanieleLena/enjoi-juice" target="_blank"   class="project-btn code-btn">
                 View Code <i class="fab fa-github"></i
               ></a>
+              
             </div>
           </div>
         </article>
@@ -450,26 +448,31 @@
 
               </div>
             <div class="project-btn-container">
-              <a href="#" class="project-btn live-btn">
+              <a href="https://casashop-react.netlify.app/" 
+              target="_blank" class="project-btn live-btn">
                 Check Live <i class="fas fa-eye"></i>
               </a>
-              <a href="#" class="project-btn code-btn">
+              <a href="https://github.com/DanieleLena/CasaShop-React" target="_blank" class="project-btn code-btn">
                 View Code <i class="fab fa-github"></i
               ></a>
             </div>
           </div>
           <div class="project-right">
+            
+            <a href="https://casashop-react.netlify.app/" target="_blank" >
             <img
               src="./images/projects-images/CasaShop-thumbnail.png"
               class="project-img"
               alt="Enjoi Juice project"
             />
+            </a>
             <img
               src="./images/projects-images/CasaShop-mockup-gray.png"
               class="project-mockup mockup-right"
               alt="mockup"
             />
-          </div>
+            </div>
+          
         </article>
         <!-- PROJECT 3 -->
 
@@ -590,10 +593,13 @@
               style="stroke: white; stroke-width: 0.3"
             />
           </svg>
+          
         </div>
       </section>
     </main>
-    <script src="app.js"></script>
-    <script src="burgerMenu.js"></script>
+    <script src="scripts/three.min.js"></script>
+    <script src="scripts/GLTFLoader.js"></script>
+    <script src="scripts/app.js" ></script>
+    <script src="scripts/burgerMenu.js"></script>
   </body>
 </html>

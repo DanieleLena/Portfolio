@@ -1,5 +1,5 @@
 @import "variables";
-@import "menu";
+// @import "menu";
 
 * {
   margin: 0;
@@ -8,6 +8,10 @@
 }
 a {
   text-decoration: none;
+  color: inherit;
+}
+html {
+  scroll-behavior: smooth;
 }
 @font-face {
   font-family: "monument-regular";
@@ -21,12 +25,16 @@ a {
   font-family: "sofia";
   src: url("/Sofia/Sofia\ Pro\ Regular\ Az.otf");
 }
+@font-face {
+  font-family: "sofia-light";
+  src: url("/Sofia/Sofia\ Pro\ UltraLight\ Az.otf");
+}
 
 // #c59d5f;
 
 body {
   // overflow-y:hidden; // change with JS after the preloader
-  background-color:black;
+  background-color: black;
 }
 // PRELOADER ========================================================================
 
@@ -101,8 +109,8 @@ body {
   width: 100%;
   height: 100vh;
   background: #0d0d0d;
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
+  // stroke-dasharray: 2000;
+  // stroke-dashoffset: 2000;
   z-index: 1;
 
   animation: dash 2.5s 4s ease-in forwards;
@@ -148,6 +156,19 @@ body {
     }
   }
 }
+.item:nth-child(3) {
+
+  svg {
+    width: 3rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
 .titleArea {
   grid-area: title;
   flex-direction: column;
@@ -192,13 +213,6 @@ body {
   width: 45px;
   height: 50px;
   margin: auto;
-  cursor: pointer;
-
-  transition: transform 0.2s ease-out;
-
-  &:hover {
-    transform: scale(1.2);
-  }
 }
 
 .hero {
@@ -215,8 +229,50 @@ body {
   }
 }
 
+// prova===============================================================
+.scene {
+  grid-area: content;
+  width: 100%;
+  height: 100%;
+  // background-color: lavender;
+  z-index: 99;
+}
+// prova===============================================================
+
+
+.menu {
+  font-size: 2rem;
+  font-family: $sofia-font;
+  cursor: pointer;
+opacity: 100%;
+transition: opacity 1s ease-in-out, background-color .5s linear;
+  position: block;
+
+  &:hover {
+    color: black;
+    background-color: $custom-white;
+  }
+}
+.link-menu{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  color: inherit;
+}
+
+.hide-menu {
+  position: absolute;
+  top: -50%;
+  opacity: 0%;
+  z-index: -1;
+ 
+}
+
 .hide-hero {
-  display: none;
+  // position: relative;
+    grid-area: auto;
 }
 
 .scroll {
@@ -233,15 +289,15 @@ body {
 
 .section-two {
   width: 100%;
-//   height: 100vh;
-//   position: relative;
+  //   height: 100vh;
+  //   position: relative;
   background-color: black;
 }
 
 .background-two {
   width: 51%;
-  height: 120vh;
-  background-color: #0d0d0d;
+  height: 80vh;
+  background-color: $custom-black;
   margin: auto;
   position: relative;
   z-index: 1;
@@ -251,32 +307,42 @@ body {
   }
 }
 .content-section-two {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-   padding: 0 2rem;   
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  padding: 0 2rem;
 }
 
 .title-two {
-    width: 100%;
-    height: 15%;
-    text-align: center;
-    color: $custom-white;
-    background-color: $custom-black;
-    padding: 2rem 0;
-    z-index: 99;
+  width: 100%;
+  height: 15%;
+  text-align: center;
+  color: $custom-white;
+  background-color: $custom-black;
+  padding: 2rem 0;
+  z-index: 99;
 }
 .title-three {
-    text-align: center;
-    color: $custom-white;
-    background-color: $custom-black;
-    padding: 2rem 0;
-    z-index: 99;
-    line-height: 2.5rem;
+  width: 53.5%;
+  text-align: center;
+  margin: auto;
+  color: $custom-white;
+  background-color: $custom-black;
+  padding: 2rem 0;
+  z-index: 99;
+  line-height: 2.5rem;
+  border: 1px solid $white-border;
+  border-bottom: none;
+  border-top: none;
+
 }
 
-
+.about-me-text {
+  color: white;
+  font-size: 1.5rem;
+  font-family: $sofia-font;
+}
 
 // PROVA =============================================================
 
@@ -284,17 +350,16 @@ body {
   width: 95%;
   margin: auto;
   //   height: 100vh;
- 
-  
 }
 
 .project-row {
   width: 100%;
   margin: auto;
   height: 60vh;
+  min-height: 28rem;
   //   border: 3px solid white;
   display: flex;
-  border: 1px solid rgba(255, 255, 255, 0.322);
+  border: 1px solid $white-border;
 }
 
 .project-left {
@@ -302,8 +367,9 @@ body {
   height: 100%;
   padding: 2.5rem;
   position: relative;
-  border-right: 1px solid rgba(255, 255, 255, 0.322);
-  background-color: $custom-black
+  border-right: 1px solid $white-border;
+  background-color: $custom-black;
+  transition: 0.3s all linear;
 }
 .project-right {
   width: 50%;
@@ -313,9 +379,7 @@ body {
   background-color: $custom-black;
 }
 
-.project-img,
-video {
-    
+.project-img {
   width: 100%;
   height: 100%;
   object-fit: fill;
@@ -335,14 +399,14 @@ video {
 }
 
 .project-text-container {
-   max-height: 65%;
-  color: #FFFCF4;
+  max-height: 65%;
+  color: #fffcf4;
   padding-bottom: 1rem;
-  
-  
+
+  // font-family: "sofia-light";
   font-family: $sofia-font;
   text-align: justify;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.322);
+  border-bottom: 1px solid $white-border;
 
   h3 {
     font-size: 2rem;
@@ -350,7 +414,7 @@ video {
     margin-bottom: 1rem;
   }
   span {
-    color:$custom-gold
+    color: $custom-gold;
   }
   ul {
     list-style: none;
@@ -368,19 +432,23 @@ video {
   svg {
     width: 10%;
     fill: white;
-    
   }
 }
 .project-btn-container {
   padding: 0 3rem;
+  position: relative;
   padding-bottom: 3rem;
   display: flex;
   justify-content: center;
 }
 
 .project-btn {
+  width: 9rem;
+  height: 2.4rem;
+  text-align: center;
+
   font-size: 1rem;
-  padding: 0.5rem 0.9rem;
+  padding: 0.5rem 0.7rem;
   margin: 1rem;
   border-radius: 20px;
   border: none;
@@ -388,6 +456,7 @@ video {
   background: white;
   color: #0d0d0d;
   font-family: $sofia-font;
+  transition: 0.1s all linear;
 
   i {
     margin-left: 0.4rem;
@@ -395,7 +464,7 @@ video {
   }
 
   &:hover {
-    transform: scale(0.95);
+    transform: scale(1.05);
   }
 }
 
@@ -416,31 +485,26 @@ video {
   }
 }
 
-@media  (max-width: 1100px) {
-  
+@media (max-width: 1100px) {
   .project-row {
     flex-direction: column;
     height: auto;
 
-    &:nth-child(2),
-    &:nth-child(4) {
-     
+    &:nth-child(3),
+    &:nth-child(5) {
       flex-direction: column-reverse;
     }
   }
-  .project-left, 
+  .project-left,
   .project-right {
     width: 100%;
   }
- .project-text-container {
-   padding-bottom: 1rem;
- }
+  .project-text-container {
+    padding-bottom: 1rem;
+  }
+}
 
- 
-} 
-
-@media  (max-width: 600px) {
-
+@media (max-width: 600px) {
   .project-left,
   .project-right {
     padding: 0;
@@ -454,10 +518,9 @@ video {
     }
   }
   .mockup-left,
-  .mockup-right
-  {
+  .mockup-right {
     display: none;
-  } 
+  }
 
   .project-btn-container {
     padding: 0;
