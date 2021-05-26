@@ -4,7 +4,7 @@ function enableScrolling() {
   }, 3300);
 }
 
-const heroContainer = document.querySelector(".scene");
+const heroContainer = document.querySelector(".hero");
 
 function displayHero() {
   const heroImages = ["hero1", "hero2", "hero3", "hero4"];
@@ -14,7 +14,7 @@ function displayHero() {
 }
 
 // window.onload = enableScrolling();
-window.onload = displayHero();
+window.onload = displayHero(); //TO CHANGE===================================
 
 const burgerBtn = document.querySelector(".burgerContainer");
 const about = document.getElementById("about-menu");
@@ -35,17 +35,17 @@ project.addEventListener("click", () => {
 const toggleMenu = () => {
   heroContainer.classList.toggle("hide-hero");
   heroContainer.classList.toggle("menu");
-onWindowResize()
-  about.classList.toggle("hide-menu");
-  contact.classList.toggle("hide-menu");
-  project.classList.toggle("hide-menu");
+// onWindowResize()
+    about.classList.toggle("hide-menu");
+    contact.classList.toggle("hide-menu");
+    project.classList.toggle("hide-menu");
 };
 
 
 
 // 3d -----------------------------------------------------------------
 
-// // 3D SCENE
+// 3D SCENE
 
 // let container;
 // let camera;
@@ -104,6 +104,7 @@ onWindowResize()
 // function animate() {
 //   requestAnimationFrame(animate);
 //     object.rotation.z += 0.005;
+//     // camera.rotation.z += 0.005;
 
 //   renderer.render(scene, camera);
 // }
